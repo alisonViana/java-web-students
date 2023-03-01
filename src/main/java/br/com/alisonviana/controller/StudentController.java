@@ -1,5 +1,6 @@
 package br.com.alisonviana.controller;
 
+import br.com.alisonviana.entity.Student;
 import br.com.alisonviana.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,7 @@ public class StudentController {
 
     @GetMapping("/students")
     public String students(Model model) {
-        model.addAttribute("students", studentService.getAllStudents());
+        model.addAttribute("k_students", studentService.getAllStudents());
 
         return "students";
     }
