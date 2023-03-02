@@ -10,6 +10,7 @@
 
 <body>
     <div th:replace="fragment/nav::navbar"></div>
+    <br>
     <div class="container">
         <div class="row">
             <h1>Students List</h1>
@@ -33,6 +34,10 @@
                     <td th:text="${student.firstName}"></td>
                     <td th:text="${student.lastName}"></td>
                     <td th:text="${student.email}"></td>
+                    <td>
+                        <a th:href="@{/students/edit?id={id}(id=${student.id})}"
+                        class="btn btn-primary">Edit</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
