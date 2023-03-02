@@ -34,9 +34,17 @@
                     <td th:text="${student.firstName}"></td>
                     <td th:text="${student.lastName}"></td>
                     <td th:text="${student.email}"></td>
-                    <td>
-                        <a th:href="@{/students/edit?id={id}(id=${student.id})}"
-                        class="btn btn-primary">Edit</a>
+                    <td class="text-center">
+                        <a 
+                        th:href="@{/students/edit?id={id}(id=${student.id})}"
+                        class="btn btn-primary"
+                        >Edit</a>
+                        <a 
+                        th:href="@{/students/delete?id={id}(id=${student.id})}"
+                        class="btn btn-danger"
+                        th:data-confirm-delete="|Are you sure you want to delete ${student.firstName} ${student.lastName}?|"
+                        onclick="if(!confirm(this.getAttribute('data-confirm-delete'))) return false"
+                        >Delete</a>
                     </td>
                 </tr>
             </tbody>
