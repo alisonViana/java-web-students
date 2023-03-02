@@ -1,14 +1,14 @@
 package br.com.alisonviana.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
+@Controller
 public class HomeController {
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String home() {
-        return "Hello World!";
+        return "index";
     }
 
 }
