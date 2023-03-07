@@ -18,7 +18,8 @@ class StudentController(
 
     @GetMapping("/students")
     fun students(model: Model): String {
-        model.addAttribute("K_students", studentService.getAllStudents())
+        println(studentService.getAllStudents().size)
+        model.addAttribute("k_students", studentService.getAllStudents())
 
         return "students"
     }
@@ -31,7 +32,7 @@ class StudentController(
         return "new_student"
     }
 
-    @PostMapping("/student/new")
+    @PostMapping("/students/new")
     fun saveStudent(@ModelAttribute("k_student") student: Student): String {
         studentService.saveStudent(student)
 
